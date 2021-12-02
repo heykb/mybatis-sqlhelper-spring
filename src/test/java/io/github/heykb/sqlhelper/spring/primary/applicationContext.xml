@@ -22,6 +22,14 @@
       </array>
     </property>
   </bean>
+  <bean id="sqlHelperPlugin" class="io.github.heykb.sqlhelper.spring.SqlHelperPluginFactoryBean">
+    <property name="properties">
+      <props>
+        <prop key="enable">true</prop>
+        <prop key="multi-tenant.enable">true</prop>
+      </props>
+    </property>
+  </bean>
 
   <bean id="propertyLogicDeleteInfoHandler" class="io.github.heykb.sqlhelper.spring.PropertyLogicDeleteInfoHandler">
     <property name="columnName">
@@ -43,17 +51,8 @@
         <value>people</value>
       </list>
     </property>
-
-
   </bean>
   <bean id="simpleTenantInfoHandler" class="io.github.heykb.sqlhelper.spring.primary.handlers.SimpleTenantInfoHandler"></bean>
-  <bean id="sqlHelperPlugin" class="io.github.heykb.sqlhelper.spring.SqlHelperPluginFactoryBean">
-    <property name="properties">
-      <props>
-        <prop key="enable">true</prop>
-        <prop key="multi-tenant.enable">true</prop>
-      </props>
-    </property>
-  </bean>
+
 
 </beans>
