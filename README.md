@@ -8,7 +8,7 @@
 <dependency>
     <groupId>io.github.heykb</groupId>
     <artifactId>mybatis-sqlHelper-spring</artifactId>
-    <version>2.0.0</version>
+    <version>${version}</version>
 </dependency>
 ~~~
 
@@ -16,7 +16,8 @@
 
 注意使用[SqlHelperPluginFactoryBean](src/main/java/io/github/heykb/sqlhelper/spring/SqlHelperPluginFactoryBean.java)工厂类创建bean而不是SqlHelperPlugin，[SqlHelperPluginFactoryBean](src/main/java/io/github/heykb/sqlhelper/spring/SqlHelperPluginFactoryBean.java)提供了自动扫描注入信息类的bean的能力，通过其properties属性可以像原始方式一样配置各项参数。SqlHelperPlugin的详细参数参见[MyBatis SqlHelper](https://github.com/heykb/mybatis-sqlhelper)。
 ~~~xml
- <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+<beans>
+  <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
     <property name="dataSource" ref="dataSource"/>
     <property name="mapperLocations" value="classpath:io/github/heykb/sqlhelper/spring/primary/dao/*.xml"/>
     <property name="plugins">
@@ -32,6 +33,8 @@
       </props>
     </property>
   </bean>
+</beans>
+ 
 ~~~
 ## 使用自动注入等功能，配置相关bean即可。
 ~~~xml
@@ -47,7 +50,7 @@
     <property name="notDeletedValue">
       <value>'N'</value>
     </property>
-    <property name="sqlDemo">
+    <property name="deleteSqlDemo">
       <value>update xx set is_deleted = 'Y'</value>
     </property>
     <property name="ignoreMapperIds">

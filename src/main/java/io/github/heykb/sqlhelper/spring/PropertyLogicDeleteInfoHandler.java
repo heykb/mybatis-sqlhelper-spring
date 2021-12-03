@@ -7,7 +7,7 @@ import java.util.List;
 
 public class PropertyLogicDeleteInfoHandler extends LogicDeleteInfoHandler {
     private static final AntPathMatcher antPathMatcher = new AntPathMatcher(".");
-    private String sqlDemo = "UPDATE a SET is_deleted = 'Y'";
+    private String deleteSqlDemo = "UPDATE a SET is_deleted = 'Y'";
     private String columnName = "is_deleted";
     private String notDeletedValue = "'N'";
 
@@ -53,8 +53,8 @@ public class PropertyLogicDeleteInfoHandler extends LogicDeleteInfoHandler {
     }
 
     @Override
-    public String getSqlDemo() {
-        return this.sqlDemo;
+    public String getDeleteSqlDemo() {
+        return this.deleteSqlDemo;
     }
 
     @Override
@@ -76,13 +76,8 @@ public class PropertyLogicDeleteInfoHandler extends LogicDeleteInfoHandler {
         return this.columnName;
     }
 
-    /**
-     * Sets sql demo.
-     *
-     * @param sqlDemo the sql demo
-     */
-    public void setSqlDemo(String sqlDemo) {
-        this.sqlDemo = sqlDemo;
+    public void setDeleteSqlDemo(String deleteSqlDemo) {
+        this.deleteSqlDemo = deleteSqlDemo;
     }
 
     /**
