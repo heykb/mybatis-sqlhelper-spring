@@ -1,5 +1,8 @@
 package io.github.heykb.sqlhelper.spring.primary;
 
+import io.github.heykb.sqlhelper.config.SqlHelperException;
+import io.github.heykb.sqlhelper.dynamicdatasource.LogicDsMeta;
+import io.github.heykb.sqlhelper.dynamicdatasource.SqlHelperDsManager;
 import io.github.heykb.sqlhelper.handler.abstractor.LogicDeleteInfoHandler;
 import io.github.heykb.sqlhelper.spring.primary.dao.EmployeeMapper;
 import io.github.heykb.sqlhelper.spring.primary.dao.PeopleMapper;
@@ -25,8 +28,8 @@ public class PluginTests {
     @Autowired
     private SqlSessionFactory sqlSessionFactory;
 
-    @Autowired
-    private LogicDeleteInfoHandler logicDeleteInfoHandler;
+    @Autowired(required = false)
+    private SqlHelperDsManager sqlHelperDsManager;
 
 
     @Test
@@ -52,5 +55,10 @@ public class PluginTests {
         }
     }
 
+    @Test
+    @DisplayName("多数据源注入测试")
+    void multiDatasourceTest(){
+        Assertions.assertThrows(SqlHelperException.class,()->sqlHelperDsManager.remove("xxx"));
+    }
 
 }

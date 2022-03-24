@@ -6,11 +6,11 @@
 
     <groupId>io.github.heykb</groupId>
     <artifactId>mybatis-sqlHelper-spring</artifactId>
-    <version>2.0.0</version>
+    <version>3.0.0</version>
 
-    <name>MyBatis SqlHelper</name>
-    <description>MyBatis 多租户、逻辑删除、数据权限插件-SqlHelper</description>
-    <url>https://github.com/heykb/mybatis-sqlhelper</url>
+    <name>MyBatis SqlHelper Spring</name>
+    <description>MyBatis 多租户、逻辑删除、数据权限插件-SqlHelper Spring版本</description>
+    <url>https://github.com/heykb/mybatis-sqlhelper-spring</url>
     <licenses>
         <license>
             <name>MIT License</name>
@@ -24,9 +24,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:git@github.com:heykb/mybatis-sqlhelper.git</connection>
-        <developerConnection>scm:git:git@github.com:heykb/mybatis-sqlhelper.git</developerConnection>
-        <url>git@github.com:heykb/mybatis-sqlhelper.git</url>
+        <connection>scm:git:git@github.com:heykb/mybatis-sqlhelper-spring.git</connection>
+        <developerConnection>scm:git:git@github.com:heykb/mybatis-sqlhelper-spring.git</developerConnection>
+        <url>git@github.com:heykb/mybatis-sqlhelper-spring.git</url>
     </scm>
 
     <properties>
@@ -42,7 +42,7 @@
         <dependency>
             <groupId>io.github.heykb</groupId>
             <artifactId>mybatis-sqlHelper</artifactId>
-            <version>2.0.0</version>
+            <version>${project.version}</version>
         </dependency>
 
         <!-- Optional dependencies -->

@@ -38,7 +38,7 @@
     <property name="notDeletedValue">
       <value>'N'</value>
     </property>
-    <property name="sqlDemo">
+    <property name="deleteSqlDemo">
       <value>update xx set is_deleted = 'Y' where id = 'xx'</value>
     </property>
     <property name="ignoreMapperIds">
@@ -53,6 +53,6 @@
     </property>
   </bean>
   <bean id="simpleTenantInfoHandler" class="io.github.heykb.sqlhelper.spring.primary.handlers.SimpleTenantInfoHandler"></bean>
-
+  <bean id="sqlHelperDsManager" class = "io.github.heykb.sqlhelper.spring.dynamicds.SpringSqlHelperDsManager"></bean>
 
 </beans>
